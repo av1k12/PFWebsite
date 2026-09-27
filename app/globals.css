@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #080808;
+  --foreground: #ededed;
+  --muted: #888888;
+  --mx: 50vw;
+  --my: 20vh;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
+  background: #080808;
 }
 
 body {
-  background: var(--background);
+  background: #080808;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.38);
+  color: #ffffff;
+}
+
+@keyframes shimmer-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(74, 222, 128, 0);
+  }
+}
+
+.shimmer-text {
+  background-image: linear-gradient(
+    110deg,
+    #ededed 0%,
+    #ffffff 28%,
+    #a5b4fc 48%,
+    #ffffff 68%,
+    #ededed 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer-shift 8s linear infinite;
+}
+
+.status-dot {
+  animation: status-pulse 2.4s ease-out infinite;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 20%, black 20%, transparent 80%);
+}
+
+.mouse-glow {
+  background:
+    radial-gradient(
+      620px circle at var(--mx) var(--my),
+      rgba(99, 102, 241, 0.16),
+      transparent 52%
+    ),
+    radial-gradient(
+      420px circle at calc(var(--mx) + 140px) calc(var(--my) + 80px),
+      rgba(34, 211, 238, 0.09),
+      transparent 48%
+    ),
+    radial-gradient(
+      380px circle at calc(var(--mx) - 160px) calc(var(--my) - 40px),
+      rgba(168, 85, 247, 0.08),
+      transparent 46%
+    );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .shimmer-text,
+  .status-dot {
+    animation: none !important;
+  }
 }
