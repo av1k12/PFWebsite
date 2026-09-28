@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
+import Image from "next/image";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
 import { SOCIALS } from "@/lib/data";
 import { fadeUp, springSoft, staggerContainer } from "@/lib/motion";
@@ -33,30 +34,29 @@ export function Hero() {
         variants={staggerContainer}
         className="mx-auto flex w-full max-w-5xl flex-col items-start"
       >
-        <motion.div variants={fadeUp} className="mb-8">
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-neutral-900/40 px-4 py-2 text-sm text-[#ededed] backdrop-blur-md"
-          >
-            <span className="status-dot size-2 rounded-full bg-green-400" />
-            <span>Seeking SWE Internships (Summer 2027)</span>
-          </motion.div>
-        </motion.div>
-
         <motion.p
           variants={fadeUp}
-          className="mb-3 font-mono text-xs tracking-[0.28em] text-[#888888] uppercase"
+          className="mb-5 font-mono text-xs tracking-[0.28em] text-[#888888] uppercase"
         >
           Portfolio / 2026
         </motion.p>
 
-        <motion.h1
+        <motion.div
           variants={fadeUp}
-          className="shimmer-text max-w-4xl text-5xl leading-[1.05] font-semibold tracking-tight sm:text-6xl lg:text-7xl"
+          className="flex items-center gap-4 sm:gap-6"
         >
-          Avaneesh Konda
-        </motion.h1>
+          <Image
+            src="/avatar.jpg"
+            alt="Portrait of Avaneesh Konda"
+            width={96}
+            height={96}
+            preload
+            className="h-[88px] w-[88px] shrink-0 rounded-full border-2 border-neutral-800 object-cover shadow-xl ring-4 ring-neutral-950/60 sm:h-24 sm:w-24"
+          />
+          <h1 className="shimmer-text text-4xl leading-[1.05] font-semibold tracking-tight sm:text-6xl lg:text-7xl">
+            Avaneesh Konda
+          </h1>
+        </motion.div>
 
         <motion.p
           variants={fadeUp}
