@@ -17,6 +17,7 @@ export type ExperienceRole = {
   id: string;
   role: string;
   company: string;
+  location?: string;
   dates: string;
   current: boolean;
   bullets: string[];
@@ -55,20 +56,24 @@ export const EXPERIENCE: ExperienceRole[] = [
     dates: "Jan 2026 – Present",
     current: true,
     bullets: [
-      "Built a recursive GraphRAG retrieval pipeline leveraging LangChain and ChromaDB to parse, embed, and map latent research topologies across 200+ neural quantum state (NQS) academic publications.",
-      "Engineered automated data ingestion pipelines using Python and Marker to extract, normalize, and serialize complex mathematical literature into vector stores for low-latency similarity queries.",
-      "Benchmarked matrix transformation workflows interfacing high-level Python models with low-level simulation hardware targeting probabilistic computing solvers (p-bits).",
+      "Architected a custom recursive GraphRAG platform utilizing LangChain, ChromaDB, and Python to extract and map conceptual knowledge graphs across 200+ Neural Quantum State (NQS) publications.",
+      "Designed an automated multi-depth graph traversal algorithm that recursively evaluates concept dependencies to surface unmapped research intersections, driving active theoretical explorations across the lab.",
+      "Scaled the retrieval engine into a shared internal research service adopted lab-wide by 15+ doctoral and postdoctoral researchers, reducing initial literature review and gap discovery cycles by over 70%.",
+      "Engineered an automated data ingestion and serialization pipeline using Python and Marker to extract, normalize, and vectorize dense mathematical LaTeX notations and benchmark tables into high-dimensional vector stores.",
     ],
   },
   {
     id: "fifth-third",
     role: "Software Engineer Intern",
     company: "Fifth Third Bank",
+    location: "Cincinnati, OH",
     dates: "June 2025 – Aug 2025",
     current: false,
     bullets: [
-      "Developed an LLM-driven developer workflow automation tool adopted across 200+ enterprise Agile teams, saving 500+ engineering and administrative hours monthly.",
-      "Automated SQL query refactoring pipelines during a multi-database enterprise migration, ensuring 100% schema alignment across legacy transactional databases without data loss.",
+      "Engineered an LLM-powered developer productivity platform leveraging enterprise Copilot APIs and Python to automate Agile user story generation, deployed company-wide across 200+ engineering teams.",
+      "Designed structured prompt templates and response-validation schemas, standardizing technical acceptance criteria and saving 500+ developer and administrative hours monthly.",
+      "Automated SQL query refactoring pipelines during an enterprise database migration, refactoring legacy transactional queries to ensure 100% schema alignment with zero data loss.",
+      "Built automated validation and syntax-checking scripts to verify query execution plans across target staging databases prior to production deployment.",
     ],
   },
 ];
@@ -78,7 +83,6 @@ export type Project = {
   title: string;
   stack: string[];
   description: string;
-  href: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -87,8 +91,7 @@ export const PROJECTS: Project[] = [
     title: "Graph Neural Network European Options Pricing Engine",
     stack: ["Python", "PyTorch Geometric", "Pandas", "CUDA"],
     description:
-      "Modeled European Index option chains (SPX) as dynamic spatial graphs to capture cross-strike volatility and asset maturity correlations. Built a GPU-accelerated tensor pipeline to evaluate non-linear volatility surfaces, outperforming baseline analytical pricing methods on out-of-the-money strikes.",
-    href: "https://github.com/avlk12",
+      "I built a model that prices S&P 500 (SPX) options by treating the option chain as a network, connecting different strike prices and expiration dates so it can see how they move together. It runs on a GPU and beat the usual pricing formulas, especially on options that are far from the current market price.",
   },
   {
     id: "campus-delivery",
@@ -103,7 +106,6 @@ export const PROJECTS: Project[] = [
     ],
     description:
       "Mobile delivery application with live driver tracking, transactional state machines, and connection pooling. Utilized PostgreSQL Row-Level Security (RLS) for multi-tenant isolation and Redis geospatial radius caching to reduce database read pressure.",
-    href: "https://github.com/avlk12",
   },
 ];
 
