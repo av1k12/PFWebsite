@@ -70,9 +70,10 @@ export function Hero() {
           className="mt-6 max-w-2xl text-base leading-7 text-[#888888] sm:text-lg sm:leading-8"
         >
           Focusing on systems programming, distributed backend architectures,
-          and machine learning infrastructure. Building distributed cloud
-          hosting layers at The Data Mine and researching neural quantum states
-          in Prof. Datta&apos;s Lab.
+          and machine learning infrastructure. Currently continuing as an AI
+          &amp; Automation SWE Intern at Cincinnati Insurance Company, building
+          distributed cloud hosting layers at The Data Mine, and researching
+          neural quantum states in Prof. Datta&apos;s Lab.
         </motion.p>
 
         <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">

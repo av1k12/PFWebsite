@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 import { GlassCard } from "@/components/glass-card";
 import { Section } from "@/components/section";
 import { PROJECTS } from "@/lib/data";
@@ -14,20 +13,10 @@ export function Projects() {
         {PROJECTS.map((project) => (
           <motion.article key={project.id} variants={fadeUp}>
             <GlassCard className="h-full">
-              <a
-                href={project.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-full flex-col p-5 sm:p-6"
-              >
-                <div className="mb-6 flex items-start justify-between gap-4">
-                  <h3 className="text-xl leading-snug font-medium tracking-tight text-[#ededed]">
-                    {project.title}
-                  </h3>
-                  <span className="mt-1 inline-flex size-8 shrink-0 items-center justify-center rounded-full border border-neutral-800 text-[#ededed]">
-                    <ArrowUpRight size={15} />
-                  </span>
-                </div>
+              <div className="flex h-full flex-col p-5 sm:p-6">
+                <h3 className="mb-6 text-xl leading-snug font-medium tracking-tight text-[#ededed]">
+                  {project.title}
+                </h3>
 
                 <p className="text-sm leading-6 text-[#b5b5b5]">
                   {project.description}
@@ -43,7 +32,7 @@ export function Projects() {
                     </span>
                   ))}
                 </div>
-              </a>
+              </div>
             </GlassCard>
           </motion.article>
         ))}

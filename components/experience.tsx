@@ -33,7 +33,10 @@ export function Experience() {
                       <h3 className="text-lg font-medium tracking-tight text-[#ededed]">
                         {role.role}
                       </h3>
-                      <p className="mt-1 text-sm text-[#c4c4c4]">{role.company}</p>
+                      <p className="mt-1 text-sm text-[#c4c4c4]">
+                        {role.company}
+                        {role.location ? ` · ${role.location}` : ""}
+                      </p>
                     </div>
                     <p className="font-mono text-xs tracking-wide text-[#888888] uppercase">
                       {role.dates}
