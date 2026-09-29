@@ -8,7 +8,7 @@ export const NAV_LINKS = [
 ] as const;
 
 export const SOCIALS = {
-  github: "https://github.com/avlk12",
+  github: "https://github.com/av1k12",
   linkedin: "https://www.linkedin.com/in/avaneeshkonda",
   email: "avaneesh.konda@gmail.com",
 } as const;
