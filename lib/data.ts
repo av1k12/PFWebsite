@@ -33,9 +33,9 @@ export const EXPERIENCE: ExperienceRole[] = [
     dateNote: "(Full-Time Summer, Part-Time Fall)",
     current: true,
     bullets: [
-      "Engineered an automated NLP ingestion pipeline to extract key policy metrics from unstructured inspection documents, inserting validated records into PostgreSQL, cutting underwriting turnaround cycles by 70%, and saving 5+ hours weekly per underwriter.",
-      "Redesigned motor vehicle record data pipelines by replacing synchronous Selenium web scraping with an asynchronous event-driven REST architecture, reducing compute consumption by 60% and eliminating idle server runtime.",
-      "Spearheaded enterprise automation initiatives across Commercial Lines, building internal tooling that eliminated operational bottlenecks and saved 50+ business hours monthly.",
+      "Engineered an automated NLP ingestion pipeline to extract key risk metrics from unstructured inspection reports, inserting validated records into PostgreSQL, cutting underwriting turnaround cycles by 70%, and saving 5+ hours weekly per underwriter.",
+      "Migrated legacy record ingestion from synchronous Selenium browser automation to an asynchronous, event-driven REST architecture, reducing server compute consumption by 60% and eliminating polling latency.",
+      "Spearheaded enterprise automation initiatives across Commercial Lines, building internal verification microservices to automate cross-system validation checks, eliminating operational bottlenecks and saving 50+ business hours monthly.",
     ],
   },
   {
@@ -45,23 +45,23 @@ export const EXPERIENCE: ExperienceRole[] = [
     dates: "Jan 2026 – Present",
     current: true,
     bullets: [
-      "Architected a custom recursive GraphRAG platform utilizing LangChain, ChromaDB, and Python to extract and map conceptual knowledge graphs across 200+ Neural Quantum State (NQS) publications.",
+      "Architected a custom recursive GraphRAG platform in Python with LangChain and ChromaDB, constructing conceptual knowledge graphs across 200+ Neural Quantum State (NQS) publications.",
       "Designed an automated multi-depth graph traversal algorithm that recursively evaluates concept dependencies to surface unmapped research intersections, driving active theoretical explorations across the lab.",
       "Scaled the retrieval engine into a shared internal research service adopted lab-wide by 15+ doctoral and postdoctoral researchers, reducing initial literature review and gap discovery cycles by over 70%.",
-      "Engineered an automated data ingestion and serialization pipeline using Python and Marker to extract, normalize, and vectorize dense mathematical LaTeX notations and benchmark tables into high-dimensional vector stores.",
+      "Engineered an automated data ingestion and serialization pipeline using Python and Marker to extract, normalize, and vectorize dense mathematical LaTeX notations and benchmark tables into high-dimensional vector embedding spaces.",
     ],
   },
   {
     id: "datamine",
-    role: "Software Engineer — Data & Systems Architecture",
+    role: "Software Engineer — Systems & Data Architecture",
     company: "The Data Mine × Feenix Group",
     dates: "Aug 2026 – Present",
     current: true,
     bullets: [
-      "Architected the core data layer for a containerized game server hosting platform, designing relational schemas in PostgreSQL for multi-tenant accounts, server records, and resource allocation registries.",
-      "Implemented an asynchronous queue and caching architecture using Redis to orchestrate server provisioning requests, tracking dynamic queue positions and ephemeral node-health metrics.",
-      "Developed automated server provisioning workflows using Docker and Linux system daemons to enforce strict per-container CPU, RAM, and disk isolation across distributed hosting nodes.",
-      "Designed real-time event streaming interfaces over WebSockets to transmit live console outputs, server metrics, and error logs directly to client dashboards.",
+      "Architected the relational data plane in PostgreSQL for a containerized game server hosting platform, designing schemas for multi-tenant accounts, container registries, and node quotas.",
+      "Implemented an asynchronous job queue and cache-aside layer using Redis to orchestrate server provisioning requests, tracking dynamic queue positions and node-health telemetry.",
+      "Developed automated server provisioning workflows using Docker and Linux system daemons, enforcing kernel-level cgroups isolation for CPU, memory, and disk across distributed hosting nodes.",
+      "Designed real-time event streaming interfaces over WebSockets, piping live console logs, diagnostics, and server metrics directly to client dashboards.",
     ],
   },
   {
@@ -72,9 +72,9 @@ export const EXPERIENCE: ExperienceRole[] = [
     dates: "June 2025 – Aug 2025",
     current: false,
     bullets: [
-      "Engineered an LLM-powered developer productivity platform leveraging enterprise Copilot APIs and Python to automate Agile user story generation, deployed company-wide across 200+ engineering teams.",
-      "Designed structured prompt templates and response-validation schemas, standardizing technical acceptance criteria and saving 500+ developer and administrative hours monthly.",
-      "Automated SQL query refactoring pipelines during an enterprise database migration, refactoring legacy transactional queries to ensure 100% schema alignment with zero data loss.",
+      "Engineered an LLM-powered developer productivity platform in Python, integrating enterprise Copilot endpoints to automate Agile story decomposition, deployed company-wide across 200+ engineering teams.",
+      "Designed structured prompt templates and response-validation schemas, standardizing technical acceptance criteria and saving 500+ engineering and administrative hours monthly.",
+      "Automated SQL query refactoring pipelines during a bank-wide database migration, refactoring legacy transactional queries to ensure 100% schema alignment with zero data loss.",
       "Built automated validation and syntax-checking scripts to verify query execution plans across target staging databases prior to production deployment.",
     ],
   },
@@ -93,7 +93,7 @@ export const PROJECTS: Project[] = [
     title: "Graph Neural Network European Options Pricing Engine",
     stack: ["Python", "PyTorch Geometric", "Pandas", "CUDA"],
     description:
-      "I built a model that prices S&P 500 (SPX) options by treating the option chain as a network, connecting different strike prices and expiration dates so it can see how they move together. It runs on a GPU and beat the usual pricing formulas, especially on options that are far from the current market price.",
+      "Models S&P 500 (SPX) option chains as dynamic graphs, with strikes as nodes and dependencies as edges, to capture non-linear cross-strike volatility and maturity correlations. A GPU-accelerated tensor pipeline (CUDA, PyTorch Geometric, Pandas) achieves a 20%+ reduction in pricing error versus Black-Scholes baselines on deep out-of-the-money options.",
   },
   {
     id: "campus-delivery",
@@ -107,7 +107,7 @@ export const PROJECTS: Project[] = [
       "Redis",
     ],
     description:
-      "Mobile delivery application with live driver tracking, transactional state machines, and connection pooling. Utilized PostgreSQL Row-Level Security (RLS) for multi-tenant isolation and Redis geospatial radius caching to reduce database read pressure.",
+      "Mobile delivery application with live courier tracking, transactional dispatch state machines, and connection pooling. Enforces multi-tenant authorization through PostgreSQL Row-Level Security (RLS). Integrated Redis geospatial indexing and radius caching for real-time courier coordinates, cutting primary database read IOPS by over 50% during peak ordering windows.",
   },
 ];
 
@@ -130,11 +130,12 @@ export const SKILL_GROUPS: SkillGroup[] = [
     title: "Distributed Systems & DBs",
     items: [
       "PostgreSQL",
+      "SQLite",
       "Redis",
       "ChromaDB",
-      "SQLite",
       "Docker",
       "Linux (POSIX)",
+      "Linux System Daemons",
       "CUDA",
       "GitHub Actions",
     ],
@@ -156,8 +157,16 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     id: "tools",
-    title: "Tools & Protocols",
-    items: ["Git", "WebSockets", "REST APIs", "CI/CD", "Docker Compose"],
+    title: "Tools & Cloud",
+    items: [
+      "Git",
+      "WebSockets",
+      "REST APIs",
+      "CI/CD",
+      "Docker Compose",
+      "Supabase",
+      "Vercel",
+    ],
     span: "normal",
   },
   {
