@@ -19,6 +19,7 @@ export type ExperienceRole = {
   company: string;
   location?: string;
   dates: string;
+  dateNote?: string;
   current: boolean;
   bullets: string[];
 };
@@ -28,7 +29,8 @@ export const EXPERIENCE: ExperienceRole[] = [
     id: "cincinnati",
     role: "Software Engineer Intern (AI & Automation)",
     company: "Cincinnati Insurance Companies",
-    dates: "May 2026 – Present (Full-Time Summer, Part-Time Fall)",
+    dates: "May 2026 – Present",
+    dateNote: "(Full-Time Summer, Part-Time Fall)",
     current: true,
     bullets: [
       "Engineered an automated NLP ingestion pipeline to extract key policy metrics from unstructured inspection documents, inserting validated records into PostgreSQL, cutting underwriting turnaround cycles by 70%, and saving 5+ hours weekly per underwriter.",

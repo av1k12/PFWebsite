@@ -38,8 +38,11 @@ export function Experience() {
                         {role.location ? ` · ${role.location}` : ""}
                       </p>
                     </div>
-                    <p className="font-mono text-xs tracking-wide text-[#888888] uppercase">
-                      {role.dates}
+                    <p className="font-mono text-xs leading-5 tracking-wide text-[#888888] uppercase sm:text-right">
+                      <span className="block">{role.dates}</span>
+                      {role.dateNote ? (
+                        <span className="mt-1 block">{role.dateNote}</span>
+                      ) : null}
                     </p>
                   </div>
 
